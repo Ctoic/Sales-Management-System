@@ -16,6 +16,7 @@
                 <div class="card-header text-center">
                     <h3>Login</h3>
                 </div>
+                <form>
                 <div class="card-body">
                     <form>
                         <div class="form-group">
@@ -28,6 +29,9 @@
                         </div>
                         <div class="form-group text-center">
                             <input type="submit" class="btn btn-primary" value="Login">
+                            <br><br><br>
+                            <small>If not register signup</small>
+                            <input type="submit" class="btn btn-primary" value="Signup">
                         </div>
                     </form>
                 </div>
@@ -35,6 +39,8 @@
         </div>
     </div>
 </div>
+
+</form>
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
