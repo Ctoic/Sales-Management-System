@@ -9,6 +9,8 @@ $user = "root";
 $password = "MyStrongPassword1234$";
 $db = "user"; 
 
+session_start();
+
 $data = mysqli_connect($host, $user, $password, $db);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -23,9 +25,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Corrected condition checking
     if ($row["usertype"] == "user") 
     {
+        $_SESSION["username"] = $username;
         header("location:userhome.php");
     } 
     elseif ($row["usertype"] == "admin") {
+        $_SESSION["username"] = $username;
         header("location:adminhome.php");}
     }
      else {
