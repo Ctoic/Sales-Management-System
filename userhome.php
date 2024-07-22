@@ -61,6 +61,7 @@ session_start();
         <div class="card-body">
           <ul class="list-group" id="recent-transactions">
             <!-- Transaction items will be added here dynamically -->
+
           </ul>
         </div>
       </div>
