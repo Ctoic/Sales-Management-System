@@ -3,7 +3,7 @@ if (isset($_GET['query'])) {
     $query = $_GET['query'];
     // Check if the query is 'shop'
     if (strtolower($query) === 'shop') {
-        header("Location: login.php");
+        header("Location: output.php");
         exit();
     } else {
         // Handle other search queries here if needed
