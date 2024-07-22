@@ -41,13 +41,13 @@
                         <div class="icon text-primary">
                             <i class="fas fa-user"></i>
                         </div>
-                        <a href="userlogin.php" class="btn btn-primary">User Login</a>
+                        <a href="login.php" class="btn btn-primary">User Login</a>
                     </div>
                     <div>
                         <div class="icon text-danger">
                             <i class="fas fa-user-shield"></i>
                         </div>
-                        <a href="adminlogin.php" class="btn btn-danger">Admin Login</a>
+                        <a href="login.php" class="btn btn-danger">Admin Login</a>
                     </div>
                 </div>
             </div>

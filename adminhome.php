@@ -58,6 +58,7 @@ mysqli_close($data);
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <?php include 'include/header.php'; ?>
     <div class="container mt-5">
         <h1 class="mb-4">Admin Home</h1>
         <p>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
@@ -127,4 +128,6 @@ mysqli_close($data);
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
+<?php include 'include/footer.php'; ?>
 </html>

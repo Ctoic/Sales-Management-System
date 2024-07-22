@@ -70,11 +70,6 @@ session_start();
 </div>
 
 <!-- Footer -->
-<footer class="bg-light text-center text-lg-start mt-5">
-  <div class="text-center p-3">
-    © 2024 Sales Management System by Najam Ali 
-  </div>
-</footer>
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -82,4 +77,6 @@ session_start();
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
+
+<?php include 'include/footer.php'; ?>
 </html>
