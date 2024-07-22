@@ -1,8 +1,8 @@
 <?php 
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
 
 $host = "localhost";
 $user = "root";
@@ -33,8 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("location:adminhome.php");}
     }
      else {
-        echo "invalid"; 
+        echo ":("; 
     }
+    
 
 ?>
 
@@ -72,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="submit" class="btn btn-primary" value="Login">
                             <br><br><br>
                             <small>If not register signup</small>
-                            <input type="submit" class="btn btn-primary" value="Signup">
+                            <input type="submit" class="btn btn-primary" value="Signup" href="signup.php">
                         </div>
                     </form>
                 </div>
@@ -80,6 +81,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </div>
+
+<div class="container">
+    <a href="signup.php">Signup</a>
+</div>
+"
 
 
 <!-- Bootstrap JS and dependencies -->

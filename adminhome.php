@@ -1,5 +1,9 @@
 <?php 
 session_start();
+
+if(!isset($_SESSION['username'])){
+    header("location:login.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +16,8 @@ session_start();
 <body>
     <h1>adminhome</h1>
     <?php echo $_SESSION['username']; ?>
+    <a href="logout.php">Logout</a>
+
     
 </body>
 </html>
