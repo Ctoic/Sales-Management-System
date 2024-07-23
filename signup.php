@@ -19,19 +19,23 @@ if (!$conn) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
+    $usertype = $_POST["usertype"];
+    $email = $_POST["email"];
+    $first_name = $_POST["first_name"];
+    $last_name = $_POST["last_name"];
     $hashed_password = password_hash($password, PASSWORD_DEFAULT); // Hash the password for security
 
-    // Check if username already exists
-    $check_user = mysqli_prepare($conn, "SELECT id FROM user WHERE username = ?");
-    mysqli_stmt_bind_param($check_user, 's', $username);
+    // Check if username or email already exists
+    $check_user = mysqli_prepare($conn, "SELECT id FROM user WHERE username = ? OR email = ?");
+    mysqli_stmt_bind_param($check_user, 'ss', $username, $email);
     mysqli_stmt_execute($check_user);
     mysqli_stmt_store_result($check_user);
 
     if (mysqli_stmt_num_rows($check_user) > 0) {
-        echo "Username already taken";
+        echo "Username or email already taken";
     } else {
-        $stmt = mysqli_prepare($conn, "INSERT INTO user (username, password, usertype) VALUES (?, ?, 'user')");
-        mysqli_stmt_bind_param($stmt, 'ss', $username, $hashed_password);
+        $stmt = mysqli_prepare($conn, "INSERT INTO user (username, password, usertype, email, first_name, last_name) VALUES (?, ?, ?, ?, ?, ?)");
+        mysqli_stmt_bind_param($stmt, 'ssssss', $username, $hashed_password, $usertype, $email, $first_name, $last_name);
         
         if (mysqli_stmt_execute($stmt)) {
             echo "Account created successfully. You can now <a href='login.php'>login</a>.";
@@ -75,6 +79,22 @@ mysqli_close($conn);
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="first_name">First Name</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="usertype">User Type</label>
+                            <input type="text" class="form-control" id="usertype" name="usertype" required>
                         </div>
                         <div class="form-group text-center">
                             <input type="submit" class="btn btn-primary" value="Signup">

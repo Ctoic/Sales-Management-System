@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input type="submit" class="btn btn-primary" value="Login">
                             <br><br><br>
                             <small>If not register signup</small>
-                            <input type="submit" class="btn btn-primary" value="Signup" href="signup.php">
+                            <input type="submit" class="btn btn-danger" value="Signup" href="/signup.php">
                         </div>
                     </form>
                 </div>

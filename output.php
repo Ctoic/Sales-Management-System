@@ -24,15 +24,7 @@
 
 <div class="container text-center">
     <h1><a href="landing.php">Sales.pk</a></h1>
-    <small><a href="login.php">Login now</a></small>
-    <br><br>
-    <small><a href="register.php">Register now</a></small>
-    <br><br>
-    <form action="search.php" method="GET" class="search-box">
-        <input type="text" class="form-control" name="query" placeholder="Search..." required>
-        <button type="submit" class="btn btn-primary ml-2">Search</button>
-    </form>
-</div>
+    <small> Click the link </small>
 
 <!-- Bootstrap JS and dependencies -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
